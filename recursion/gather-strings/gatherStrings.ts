@@ -8,12 +8,14 @@ function gatherStrings(obj: Record<string, any>): string[] {
 
   if (obj.keys.length === 0) return [];
 
-  const valueToEvaluate = obj[obj.keys[0]]
+  const keyToEvaluate = obj.keys[0]
+  const valueToEvaluate = obj[keyToEvaluate]
   if (typeof valueToEvaluate === "string"){
-    return [valueToEvaluate, ...gatherStrings(obj - valueToEvaluate)
+    delete obj.keyToEvaluate
+    return [valueToEvaluate, ...gatherStrings(obj)]
   }
 
-  return gatherStrings(obj - valueToEvaluate)
+  return gatherStrings(obj)
 }
 
 export { gatherStrings };
