@@ -3,18 +3,16 @@
 
 function binarySearch(arr: number[], val: number, left = 0, right = arr.length): boolean {
 
-
   const middle = Math.floor((left + right) / 2);
   if (arr[middle] === val) return true;
 
-  if (left === right) return false;
-
+  if (left >= right) return false;
 
   if (arr[middle] > val) {
-    return binarySearch(arr, val, left, middle);
+    return binarySearch(arr, val, left, middle-1);
   }
   else {
-    return binarySearch(arr, val, middle, right);
+    return binarySearch(arr, val, middle+1, right);
   }
 }
 

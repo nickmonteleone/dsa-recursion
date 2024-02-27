@@ -14,7 +14,7 @@ it("returns -1 if the value does not exist", function () {
 });
 
 
-const numsMulti = [1, 2, 2, 3, 3];
+const numsMulti = [1, 2, 2, 3, 3, 3, 3, 3, 3];
 
 it("returns first index", function () {
   expect(findIndex(numsMulti, 1)).toBe(0);
