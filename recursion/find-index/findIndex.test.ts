@@ -12,3 +12,16 @@ it("returns first index", function () {
 it("returns -1 if the value does not exist", function () {
   expect(findIndex(nums, 0)).toBe(-1);
 });
+
+
+const numsMulti = [1, 2, 2, 3, 3];
+
+it("returns first index", function () {
+  expect(findIndex(numsMulti, 1)).toBe(0);
+  expect(findIndex(numsMulti, 2)).toBe(1);
+  expect(findIndex(numsMulti, 3)).toBe(3);
+});
+
+it("returns -1 if the value does not exist", function () {
+  expect(findIndex(numsMulti, 0)).toBe(-1);
+});
