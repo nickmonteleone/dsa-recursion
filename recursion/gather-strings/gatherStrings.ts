@@ -1,14 +1,17 @@
 /** gatherStrings: given an object, return array of all the string values. */
 
 function gatherStrings(obj: Record<string, any>): string[] {
-  let output: string[] = []
+  let output: string[] = [];
+
 
   for (const key in obj) {
-    if (typeof obj[key] === "string") {
-      output.push(obj[key]);
+    const value = obj[key];
+    if (typeof value === "string") {
+      output.push(value);
     }
-    else if (typeof obj[key] === "object") {
-      output = output.concat(gatherStrings(obj[key]))
+    else if (typeof value === "object") {
+      // output = output.concat(gatherStrings(value));
+      output.push(...gatherStrings(value))
     }
   }
 
