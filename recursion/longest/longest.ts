@@ -11,6 +11,7 @@ function longest(words: LLNodeStr | null): number {
   const longestRemaining = longest(words.next);
 
   return currentLength > longestRemaining ? currentLength : longestRemaining;
+  // return Math.max(currentLength, longestRemaining)
 }
 
 export { longest };
